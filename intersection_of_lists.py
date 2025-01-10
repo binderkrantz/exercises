@@ -2,7 +2,7 @@
 # For example, if A = [1, 2, 3, 4, 5], and B = [0, 1, 3, 7] then you should return [1, 3].
 
 def intersection(a, b):
-    return []
+    return [i for i in a if i in b]
 
 tests = [
     (([1,2,3,4,5], [0, 1, 3, 7]), [1,3]),
