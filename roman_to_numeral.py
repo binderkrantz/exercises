@@ -11,16 +11,16 @@ def roman_to_int(s):
         'M': 1000
     }
     numerals = [mapping[l] for l in s]
-    numerals.append(0)
-    s = 0
-    while len(numerals) > 1:
-        n = numerals.pop(0) 
-        if n >= numerals[0]:
-            s += n
+    previous_numeral = 0
+    integer = 0
+    for n in reversed(numerals):
+        if n >= previous_numeral:
+            integer += n
         else:
-            s -= n
-    return s
-
+            integer -= n
+        previous_numeral = n
+    
+    return integer
 
 tests = [
 	('XI', 11),
