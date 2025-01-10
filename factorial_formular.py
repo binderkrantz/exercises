@@ -4,7 +4,11 @@
 # Assume is nn is a non-negative integer.
 
 def factorial(n):
-    return -1
+        f = 1
+        while n > 1:
+            f *= n
+            n -= 1
+        return f
 
 # tests
 assert factorial(0) == 1
