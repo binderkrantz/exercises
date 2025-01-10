@@ -3,9 +3,7 @@
 # However, if the input was [1,3,5,7] then return False, because every element of the list is distinct.
 
 def contains_duplicate(input)-> bool:
-    
-    pass
-
+    return len(input) != len(set(input))
 
 tests = [
     ([1, 3, 5, 7, 1], True),
@@ -15,4 +13,4 @@ tests = [
 
 for t in tests:
     a = contains_duplicate(t[0])
-    assert a == t[1], a
+    assert a == t[1], (t,a)
