@@ -2,7 +2,9 @@
 # determine whether these points lie on the same straight line. Return True if they do, and False otherwise.
 
 def on_straight_line(points):
-	return False
+	a, b, c = points
+	return (a[1] - b[1]) * (a[0] - c[0]) == (a[1] - c[1]) * (a[0] - b[0]) # slopes are equal
+	return a[0] * (b[1] - c[1]) + b[0] * (c[1] - a[1]) + c[0] * (a[1] - b[1]) == 0 # area of triangle is 0
 
 tests = [
 	([(2, 1), (3, 4), (5, 6)], False),
